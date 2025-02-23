@@ -14,7 +14,7 @@ public class RazorpayPaymentGateway implements IPaymentGateway{
     private RazorpayClient razorpayClient;
 
 
-    public String createStandardPaymentLink(Double amount,String orderId,
+    public String createStandardPaymentLink(Long amount,String orderId,
                                             String phoneNumber,
                                             String name,
                                             String email){
@@ -24,8 +24,8 @@ public class RazorpayPaymentGateway implements IPaymentGateway{
         paymentLinkRequest.put("currency","INR");
         paymentLinkRequest.put("accept_partial",true);
         paymentLinkRequest.put("first_min_partial_amount",100);
-        paymentLinkRequest.put("expire_by",1991097057);
-        paymentLinkRequest.put("reference_id","TS1989");
+        paymentLinkRequest.put("expire_by",1891097057);
+        paymentLinkRequest.put("reference_id",orderId);
         paymentLinkRequest.put("description","Payment for policy no #23456");
         JSONObject customer = new JSONObject();
         customer.put("name",phoneNumber);

@@ -1,4 +1,4 @@
-package org.da1.paymentservice;
+package org.da1.paymentservice.config;
 
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RazorPayConfig {
-    @Value("$(razorpay.id)")
+    @Value("${razorpay.id}")
     private String apiKey;
-    @Value("$(razorpay.secret)")
+    @Value("${razorpay.secret}")
     private String apiSecret;
 
     @Bean

@@ -12,7 +12,7 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping
-    public String initiatePayment(@RequestParam InitiatePaymentDTO initiatePaymentDTO) {
+    public String initiatePayment(@RequestBody InitiatePaymentDTO initiatePaymentDTO) {
 
         return paymentService.getPaymentLink(initiatePaymentDTO.getAmount(),initiatePaymentDTO.getOrderId(),initiatePaymentDTO.getPhoneNumber(),
                 initiatePaymentDTO.getName(),initiatePaymentDTO.getEmail());

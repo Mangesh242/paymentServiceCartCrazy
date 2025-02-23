@@ -11,7 +11,7 @@ public class PaymentService implements IPaymentService {
     private PaymentGatewayChooserStrategy paymentGatewayChooserStrategy;
 
     @Override
-    public String getPaymentLink(Double amount, String orderId, String phoneNumber, String name, String email) {
+    public String getPaymentLink(Long amount, String orderId, String phoneNumber, String name, String email) {
         IPaymentGateway iPaymentGateway= paymentGatewayChooserStrategy.getPaymentGateway(100);
 
         return iPaymentGateway.createStandardPaymentLink(amount, orderId, phoneNumber, name, email);
